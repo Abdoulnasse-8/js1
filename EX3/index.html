@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Interactif</title>
+</head>
+<body>
+    <h1>Quiz Interactif</h1>
+    <button onclick="lancerQuiz()">Démarrer le Quiz</button>
+    <p id="resultat"></p>
+
+    <script>
+        // Tableau des questions et réponses
+        const QUESTIONS = [
+            ["Quelle est la capitale de la France ?", "Paris"],
+            ["Combien font 2 + 2 ?", "4"],
+            ["Quelle est la couleur du ciel par temps clair ?", "Bleu"],
+            ["Qui a peint la Joconde ?", "Léonard de Vinci"],
+            ["Quelle planète est surnommée la 'planète rouge' ?", "Mars"]
+        ];
+
+        function lancerQuiz() {
+            let score = 0;
+            
+            // Parcourir toutes les questions
+            for (let i = 0; i < QUESTIONS.length; i++) {
+                const question = QUESTIONS[i][0];
+                const reponseCorrecte = QUESTIONS[i][1];
+                
+                // Demander la réponse à l'utilisateur
+                const reponseUtilisateur = prompt(question);
+                
+                // Vérifier la réponse
+                if (reponseUtilisateur && reponseUtilisateur.toLowerCase() === reponseCorrecte.toLowerCase()) {
+                    alert("Réponse juste !");
+                    score++;
+                } else {
+                    alert(`Réponse fausse ! La bonne réponse était : ${reponseCorrecte}`);
+                }
+            }
+            
+            // Afficher le résultat final
+            document.getElementById("resultat").textContent = 
+                `Vous avez répondu correctement à ${score} questions sur ${QUESTIONS.length}.`;
+        }
+    </script>
+</body>
+</html>

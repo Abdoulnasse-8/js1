@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculatrice basique</title>
+    <script src="js/script.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        input, button { padding: 8px; margin: 5px; }
+        #resultats { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Calculatrice basique</h1>
+    <form id="calculForm">
+        <label for="nombre1">Nombre 1 :</label>
+        <input type="number" id="nombre1" required><br>
+        
+        <label for="nombre2">Nombre 2 :</label>
+        <input type="number" id="nombre2" required><br>
+        
+        <button type="button" onclick="calculer()">Calculer</button>
+    </form>
+    
+    <div id="resultats"></div>
+</body>
+</html>
